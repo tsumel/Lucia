@@ -1,0 +1,645 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Lucia.ico"
+
+IDR_LUCIATYPE           ICON                    "res\\LuciaDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "C&lose\tCtr+L",               ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM "Pa&ge Setup...",              ID_FILE_PAGE_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Properties"
+    BEGIN
+        MENUITEM "&Operator...",                ID_OPERATOR
+        MENUITEM "Mete&r...",                   ID_METER
+        MENUITEM "&Comment...",                 ID_COMMENTAR
+        MENUITEM "M&easure...",                 ID_MEASURE
+    END
+    MENUITEM "&Record",                     ID_SAVE_AS_TEXT
+    MENUITEM "E&xcel",                      ID_EXCEL_CONVERT
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Lucia...",             ID_APP_ABOUT
+    END
+    MENUITEM "&Start",                      ID_START_STOP_MSR
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Lucia"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Lucia Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1998",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_LUCIA_FORM DIALOGEX 0, 0, 527, 292
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Progress1",IDC_PROSESS,"msctls_progress32",WS_BORDER,122,275,348,9
+    CONTROL         "",IDC_GRAPH_FRAME,"Static",SS_BLACKFRAME | SS_SUNKEN,122,8,398,260
+    CONTROL         "Tree1",IDC_MEASURE_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,8,106,277,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_ELAPSED_TIME,475,272,45,13,ES_CENTER | ES_AUTOHSCROLL | WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Lucia MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Lucia"
+            VALUE "LegalCopyright", "Copyright (C) 1998"
+            VALUE "OriginalFilename", "Lucia.EXE"
+            VALUE "ProductName", "Lucia Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_LUCIA_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 520
+        VERTGUIDE, 160
+        BOTTOMMARGIN, 285
+        HORZGUIDE, 9
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_LUCIA_FORM AFX_DIALOG_LAYOUT
+BEGIN
+    0,
+    0, 100, 100, 0,
+    0, 0, 100, 100,
+    0, 0, 0, 100,
+    100, 100, 0, 0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Lucia\n\nLucia\nLucia Files (*.luc)\n.luc\nLucia.Document\nLucia Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Lucia"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE
+BEGIN
+    ID_MEASURING            "Start measuring"
+    ID_OPERATOR             "Operator Name"
+    ID_METER                "Meter Properties"
+    ID_COMMENTAR            "Comment to Measure"
+    ID_MEASURE              "Measure Properties"
+    ID_SAVE_AS_TEXT         "Save Measures as Text File"
+    ID_STOP_MEASURING       "Stop Measuring"
+    ID_CONTINUE_MEASURING   "Continue measuring\nContinue"
+    ID_PAGE_SETUP           "Change the page options\nPage Setup"
+    ID_EXCEL_CONVERT        "Run Excel with current Document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_BREAK_MEASURING      "Start measuring\n Start"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Estonian (Estonia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ETI)
+LANGUAGE LANG_ESTONIAN, SUBLANG_DEFAULT
+#pragma code_page(1257)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPERATOR_DLG DIALOG 0, 0, 136, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Operator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_OPERATOR_NAME,7,25,122,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,51,50,14
+    LTEXT           "Type the operator name:",IDC_STATIC,8,9,78,8
+END
+
+IDD_COMMENT_DLG DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Comment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_COMMENT,7,26,172,43,ES_MULTILINE | WS_VSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,74,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,74,50,14
+    LTEXT           "Type Your Comment:",IDC_STATIC,7,9,67,8
+END
+
+IDD_METER_DLG DIALOG 0, 0, 360, 183
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Meter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,303,162,50,14
+    LTEXT           "FLUKE 45",IDC_STATIC,7,7,34,8
+    LTEXT           "Connect with port:",IDC_STATIC,215,61,58,8
+    COMBOBOX        IDC_PORT_NAME,280,59,48,91,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Boud Rate:",IDC_STATIC,215,97,37,8
+    COMBOBOX        IDC_BOUD_RATE,280,94,48,86,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Connection Properties",IDC_STATIC,206,38,147,106
+    CONTROL         "Parity",IDC_PARITY,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,217,122,33,10
+    GROUPBOX        "Meter Properties",IDC_STATIC,7,38,187,104,WS_GROUP
+    CONTROL         "Voltage DC",IDC_RB_VDC,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT | WS_GROUP,13,52,52,10
+    CONTROL         "Current DC",IDC_RB_CDC,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT,14,68,51,10
+    CONTROL         "Resistence",IDC_RB_RES,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT,14,84,51,10
+    CONTROL         "Voltage AC",IDC_RB_VAC,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT,123,52,51,10
+    CONTROL         "Current AC",IDC_RB_CAC,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT,124,68,50,10
+    CONTROL         "Freque",IDC_RB_FREQ,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT,136,84,38,10
+    LTEXT           "Rate",IDC_STATIC,17,104,16,8
+    LTEXT           "Range",IDC_STATIC,95,103,22,8
+    COMBOBOX        IDC_RATE,41,101,40,50,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RANGE,122,101,64,75,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Echo",IDC_ECHO,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,283,122,33,10
+END
+
+IDD_MEASURE_DLG DIALOGEX 0, 0, 411, 141
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Measure"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_MEASURE_COUNT,45,35,89,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SERIA_COUNT,45,61,89,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_IN_SERIA_COUNT,45,86,89,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MEASURE_DELAY,149,35,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SERIA_DELAY,149,61,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_IN_SERIA_DELAY,149,86,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,8,118,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,354,118,50,14
+    LTEXT           "Select measure properties.",IDC_STATIC,69,7,84,8
+    LTEXT           "Measure:",IDC_STATIC,9,38,30,8
+    LTEXT           "Seria:",IDC_STATIC,11,63,19,8
+    LTEXT           "Take in",IDC_STATIC,8,85,27,8
+    LTEXT           "Count",IDC_STATIC,45,22,20,10
+    LTEXT           "Delay (ms.)",IDC_STATIC,149,22,39,10
+    LTEXT           "Continuance of",IDC_STATIC,204,22,51,10
+    LTEXT           "Seria:",IDC_STATIC,11,95,19,8
+    LTEXT           "all measure:",IDC_STATIC,204,38,43,8
+    LTEXT           "one measure:",IDC_STATIC,204,64,44,8
+    LTEXT           "one seria:",IDC_STATIC,206,89,32,8
+    EDITTEXT        IDC_SUM_CONT,250,38,63,12,ES_AUTOHSCROLL | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_ONE_MSR_CONT,250,64,63,12,ES_AUTOHSCROLL | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_ONE_SERIA_CONT,250,90,63,12,ES_AUTOHSCROLL | WS_DISABLED | NOT WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_OPERATOR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 129
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_COMMENT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_METER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 353
+        VERTGUIDE, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+        HORZGUIDE, 38
+    END
+
+    IDD_MEASURE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 404
+        VERTGUIDE, 45
+        VERTGUIDE, 71
+        VERTGUIDE, 87
+        VERTGUIDE, 122
+        VERTGUIDE, 134
+        VERTGUIDE, 142
+        VERTGUIDE, 185
+        VERTGUIDE, 188
+        VERTGUIDE, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+        HORZGUIDE, 22
+        HORZGUIDE, 32
+        HORZGUIDE, 49
+        HORZGUIDE, 75
+        HORZGUIDE, 100
+        HORZGUIDE, 132
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\Lucia.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_METER_DLG DLGINIT
+BEGIN
+    IDC_PORT_NAME, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_PORT_NAME, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_PORT_NAME, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_PORT_NAME, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_BOUD_RATE, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_BOUD_RATE, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_RATE, 0x403, 5, 0
+0x6c53, 0x776f, "\000" 
+    IDC_RATE, 0x403, 7, 0
+0x654d, 0x6964, 0x6d75, "\000" 
+    IDC_RATE, 0x403, 5, 0
+0x6146, 0x7473, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_MEASURE_DLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // Estonian (Estonia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\Lucia.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
