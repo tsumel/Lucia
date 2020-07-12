@@ -16,7 +16,10 @@ static char THIS_FILE[]=__FILE__;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-CPort::CPort()
+CPort::CPort():
+	m_ReadIntervalTimeout(DefaultReadIntervalTimeout.count()),
+	m_ReadTotalTimeoutMultiplier(DefaultReadTotalTimeoutMultiplier.count()),
+	m_ReadTotalTimeoutConstant(DefaultReadTotalTimeoutConstant.count())
 {
 	m_hPort = NULL;
 }
@@ -30,7 +33,6 @@ CPort::~CPort()
 		SetCommTimeouts(m_hPort, &m_oldTimeOut);
 		CloseHandle(m_hPort);
 	}
-
 }
 
 bool CPort::Create(const char* name, const char* str)
@@ -130,9 +132,9 @@ bool CPort::WriteStr(CString cmd)
 CString CPort::ReadStr()
 {
 	// TODO: why setup COMM on every READ?
-	m_TimeOut.ReadIntervalTimeout = 1000;
-	m_TimeOut.ReadTotalTimeoutMultiplier = 1000; 
-	m_TimeOut.ReadTotalTimeoutConstant = 1000; // ms
+	m_TimeOut.ReadIntervalTimeout = m_ReadIntervalTimeout.count();
+	m_TimeOut.ReadTotalTimeoutMultiplier = m_ReadTotalTimeoutMultiplier.count(); 
+	m_TimeOut.ReadTotalTimeoutConstant = m_ReadTotalTimeoutConstant.count(); // ms
 
 	CString result = _T("");
 

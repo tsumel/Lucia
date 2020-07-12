@@ -28,6 +28,10 @@ public:
 	BOOL m_bParity;
 	BOOL m_bEcho;
 
+	DWORD m_PortReadIntervalTimeout;
+	DWORD m_PortReadTotalTimeoutMultiplier;
+	DWORD m_PortReadTotalTimeoutConstant;
+
 	CString m_Rate;
 	unsigned short m_Range;
 	unsigned short m_MsrType;

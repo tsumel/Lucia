@@ -30,6 +30,10 @@ void CMeterDlg::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CMeterDlg)
 	DDX_Control(pDX, IDC_RATE, m_cmbRate);
 	DDX_Control(pDX, IDC_RANGE, m_cmbRange);
+
+	DDX_Text(pDX, IDC_EDIT_READ_INTERVAL_TIMEOUT, m_pMeter->m_PortReadIntervalTimeout);
+	DDX_Text(pDX, IDC_EDIT_READ_TOTAL_TIMEOUT_MULTIPLIER, m_pMeter->m_PortReadTotalTimeoutMultiplier);
+	DDX_Text(pDX, IDC_EDIT_READ_TOTAL_TIMEOUT_CONSTANT, m_pMeter->m_PortReadTotalTimeoutConstant);
 	//}}AFX_DATA_MAP
 }
 
@@ -115,8 +119,6 @@ BOOL CMeterDlg::OnInitDialog()
 
 	m_cmbRange.SetCurSel(m_pMeter->m_Range);				
 				
-	// TODO: Add extra initialization here
-	
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }

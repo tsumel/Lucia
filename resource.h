@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by Lucia.rc
 //
 #define IDD_ABOUTBOX                    100
@@ -14,6 +14,7 @@
 #define IDC_COMMENT                     1000
 #define IDC_SUM_CONT                    1000
 #define IDC_ELAPSED_TIME                1000
+#define IDC_EDIT_READ_INTERVAL_TIMEOUT  1000
 #define IDC_PORT_NAME                   1003
 #define IDC_BOUD_RATE                   1004
 #define IDC_PARITY                      1005
@@ -51,6 +52,9 @@
 #define IDC_SPN_IN_SERIA_DELAY          1053
 #define IDC_ONE_MSR_CONT                1054
 #define IDC_ONE_SERIA_CONT              1055
+#define IDC_EDIT_READ_TOTAL_MULTIPLIER_TIMEOUT 1058
+#define IDC_EDIT_READ_TOTAL_TIMEOUT_MULTIPLIER 1058
+#define IDC_EDIT_READ_TOTAL_TIMEOUT_CONSTANT 1059
 #define ID_MEASURING                    32772
 #define ID_OPERATOR                     32773
 #define ID_METER                        32774
@@ -70,9 +74,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        141
+#define _APS_NEXT_RESOURCE_VALUE        142
 #define _APS_NEXT_COMMAND_VALUE         32783
-#define _APS_NEXT_CONTROL_VALUE         1058
+#define _APS_NEXT_CONTROL_VALUE         1060
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

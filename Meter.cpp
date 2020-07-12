@@ -12,6 +12,8 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
+using namespace std::chrono;
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +29,11 @@ CMeter::CMeter()
 	m_bParity = FALSE;
 
 	m_pPort = NULL;
-	m_pPort = new CPort;
+	m_pPort = new CPort();
+
+	m_PortReadIntervalTimeout = m_pPort->m_ReadIntervalTimeout.count();
+	m_PortReadTotalTimeoutMultiplier = m_pPort->m_ReadTotalTimeoutMultiplier.count();
+	m_PortReadTotalTimeoutConstant = m_pPort->m_ReadTotalTimeoutConstant.count();
 
 	m_bEcho = FALSE;
 	
@@ -92,6 +98,10 @@ void CMeter::SetMeter()
 {
 	CMeterDlg dlg(this,NULL);
 	dlg.DoModal();
+
+	m_pPort->m_ReadIntervalTimeout = milliseconds(m_PortReadIntervalTimeout);
+	m_pPort->m_ReadTotalTimeoutMultiplier = milliseconds(m_PortReadTotalTimeoutMultiplier);
+	m_pPort->m_ReadTotalTimeoutConstant = milliseconds(m_PortReadTotalTimeoutConstant);
 }
 
 bool CMeter::Initialise(bool mode)
