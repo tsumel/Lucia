@@ -504,16 +504,11 @@ void CObservate::WriteToFile(CStdioFile * pFile)
 					return;
 				}
 
-				auto ms = std::chrono::milliseconds(m_timestapms[pos]);
-				std::time_t seconds_since_epoch = std::chrono::duration_cast<std::chrono::seconds>(ms).count();
-				auto fractional_seconds = ms.count() % 1000;
-				auto fractional_ms = ms.count() - seconds_since_epoch * 1000;
-				std::stringstream ss;
-				ss << std::ctime(&seconds_since_epoch) << " " << fractional_seconds << "." << fractional_ms;
+				auto posix_timestamp = std::to_string(m_timestapms.GetAt(pos) * std::chrono::system_clock::period::num / std::chrono::system_clock::period::den);
 				pFile->WriteString("\t");
-				pFile->WriteString(ss.str().c_str());
+				pFile->WriteString(posix_timestamp.c_str());
 
-				auto timestamp = std::to_string(m_timestapms[pos]);
+				auto timestamp = std::to_string(m_timestapms.GetAt(pos));
 				pFile->WriteString("\t");
 				pFile->WriteString(timestamp.c_str());
 

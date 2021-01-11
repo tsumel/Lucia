@@ -312,10 +312,9 @@ UINT ExMeasure(LPVOID WinObjPtr)
 			{
 				pos = pObs->m_InSeriaCount * (m * (pObs->m_SeriaCount) + s) + v;
 
-				pObs->m_timestapms[pos] = std::chrono::duration_cast<std::chrono::milliseconds>
-					(std::chrono::steady_clock::now().time_since_epoch()).count();
+				pObs->m_timestapms.InsertAt(pos, std::chrono::system_clock::now().time_since_epoch().count());
 
-				pObs->m_ValList[pos] = ptr->GetDocument()->m_pMeter->GetVal();
+				pObs->m_ValList.InsertAt(pos, ptr->GetDocument()->m_pMeter->GetVal());
 
 				pObs->ShowValInTree(&ptr->m_MsrTree, pos, hTreeItm[1]);
 
@@ -324,7 +323,7 @@ UINT ExMeasure(LPVOID WinObjPtr)
 				{
 					pObs->ShowValInGraph(pos - 1, FALSE);
 				}
-			
+
 				if(!ptr->m_IsContinue)
 				{
 					pObs->m_RealSize = RealSize;
@@ -338,6 +337,7 @@ UINT ExMeasure(LPVOID WinObjPtr)
 
 					AfxEndThread(stat);
 				}
+
 				ptr->m_Progress.StepIt();
 			
 				RealSize++;

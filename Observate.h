@@ -68,7 +68,7 @@ public:
 	DWORD m_InSeriaDelay;
 
 	DWORD m_RealSize;
-	CArray < unsigned long > m_timestapms;
+	CArray < unsigned long long > m_timestapms;
 	CArray < double > m_ValList;
 
 };
